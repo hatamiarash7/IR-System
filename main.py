@@ -117,12 +117,14 @@ class Example(Frame):
         process.remove_stopwords()
         logging.info("Stemming ...")
         process.stemming()
-        print "\a"
         stemmed = process.get_stemmed()
         logging.info("Add Tokens To DB ...")
-        print "Add Tokens ..."
-        d = db.Database()
-        d.add_token(stemmed)
+        # print "Add Tokens ..."
+        # d = db.Database()
+        # d.add_token(stemmed)
+        print "Calculate Frequencies ... \a"
+        process.frequency()
+
 
     def onClick_ListBox(self, event):
         widget = event.widget
